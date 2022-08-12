@@ -1,4 +1,6 @@
-﻿using Confab.Shared.Infrastructure.Api;
+﻿using Confab.Shared.Abtractions;
+using Confab.Shared.Infrastructure.Api;
+using Confab.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ namespace Confab.Shared.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
+            services.AddSingleton<IClock, UtcClock>();
+
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
                 {

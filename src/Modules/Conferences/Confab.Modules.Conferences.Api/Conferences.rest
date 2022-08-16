@@ -1,0 +1,67 @@
+@url = http://localhost:5000/conferences-module
+@hostId = 0d8a4f16-f71e-4ef7-b899-6135054df0f1
+
+###
+GET {{url}}
+
+###
+POST {{url}}/hosts
+Content-Type: application/json
+
+{ 
+    "name" : "Host #1",
+    "description" : "Lorem Ipsum"
+}
+
+###
+GET {{url}}/hosts/{{hostId}}
+
+###
+GET {{url}}/hosts
+
+###
+PUT {{url}}/hosts/{{hostId}}
+Content-Type: application/json
+
+{ 
+    "name" : "Host #2",
+    "description" : "Lorem Ipsum 321"
+}
+
+###
+DELETE {{url}}/hosts/{{hostId}}
+
+-----------------
+
+###
+POST {{url}}/conferences
+Content-Type: application/json
+
+{ 
+    "hostId" : "{{hostId}}",
+    "name" : "Conference #1",
+    "description" : "Lorem Ipsum",
+    "location" : "Test 123",
+    "from" : "2022-12-01",
+    "to" : "2022-12-03",
+    "participantsLimit" : "100",
+    "logoUrl" : null 
+}
+
+###
+GET {{url}}/hosts/{{hostId}}
+
+###
+GET {{url}}/hosts
+
+###
+PUT {{url}}/hosts/{{hostId}}
+Content-Type: application/json
+
+{ 
+    "name" : "Host #2",
+    "description" : "Lorem Ipsum 321"
+}
+
+###
+DELETE {{url}}/hosts/{{hostId}}

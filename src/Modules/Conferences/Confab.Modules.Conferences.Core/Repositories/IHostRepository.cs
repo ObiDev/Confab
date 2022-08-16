@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Confab.Modules.Conferences.Core.Rpository
+namespace Confab.Modules.Conferences.Core.Repositories
 {
-    public interface IHostRepository
+    internal interface IHostRepository
     {
         Task<Host> GetAsync(Guid id);
         Task<IReadOnlyList<Host>> BrowseAync();

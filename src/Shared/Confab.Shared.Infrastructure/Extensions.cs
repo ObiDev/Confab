@@ -20,6 +20,11 @@ namespace Confab.Shared.Infrastructure
         {
             services.AddSingleton<IClock, UtcClock>();
 
+            services.AddMvc(options =>
+            {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
+
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager =>
                 {

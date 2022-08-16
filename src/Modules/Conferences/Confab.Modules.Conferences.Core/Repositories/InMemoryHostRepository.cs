@@ -1,4 +1,5 @@
 ﻿using Confab.Modules.Conferences.Core.Entities;
+using Confab.Modules.Conferences.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

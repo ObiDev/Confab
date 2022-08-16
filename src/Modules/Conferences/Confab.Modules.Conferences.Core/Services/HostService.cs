@@ -2,7 +2,7 @@
 using Confab.Modules.Conferences.Core.Entities;
 using Confab.Modules.Conferences.Core.Exceptions;
 using Confab.Modules.Conferences.Core.Policies;
-using Confab.Modules.Conferences.Core.Rpository;
+using Confab.Modules.Conferences.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +62,7 @@ namespace Confab.Modules.Conferences.Core.Services
                 return null;
 
             var dto = Map<HostDetailsDto>(host);
-            dto.Conferences = host.Conferences.Select(c => new ConferenceDto
+            dto.Conferences = host.Conferences?.Select(c => new ConferenceDto
             {
                 Id = c.Id,
                 HostId = c.HostId,

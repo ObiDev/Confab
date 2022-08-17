@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Confab.Shared.Abtractions.Exceptions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace Confab.Shared.Infrastructure.Exceptions
     {
         public static IServiceCollection AddErrorHandling(this IServiceCollection services)
         {
-            services.AddSingleton<ErrorHandlerMiddleware>();
+            services.AddScoped<ErrorHandlerMiddleware>();
+            services.AddSingleton<IExceptionToResponseMapper, ExceptionToResponseMapper>();
 
             return services;
         }

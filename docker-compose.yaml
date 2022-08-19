@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     container_name: pgadmin
     environment:
-      - PGADMIN_DEFAULT_EMAIL=marcinobi@obi.pl
+      - PGADMIN_DEFAULT_EMAIL=test@test.pl
       - PGADMIN_DEFAULT_PASSWORD=postgresmaster
     ports:
       - '82:80'

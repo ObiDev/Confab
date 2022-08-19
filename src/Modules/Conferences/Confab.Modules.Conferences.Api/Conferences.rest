@@ -1,5 +1,6 @@
 @url = http://localhost:5000/conferences-module
-@hostId = 0d8a4f16-f71e-4ef7-b899-6135054df0f1
+@hostId = 017a18da-6ac0-4f7e-a4a5-a4712a4237d6
+@conferenceId = 56942e13-df73-4376-8446-343c367fcc63
 
 ###
 GET {{url}}
@@ -31,7 +32,7 @@ Content-Type: application/json
 ###
 DELETE {{url}}/hosts/{{hostId}}
 
------------------
+--------- CONFERENCES -----------
 
 ###
 POST {{url}}/conferences
@@ -39,7 +40,7 @@ Content-Type: application/json
 
 { 
     "hostId" : "{{hostId}}",
-    "name" : "Conference #1",
+    "name" : "Conference #6",
     "description" : "Lorem Ipsum",
     "location" : "Test 123",
     "from" : "2022-12-01",
@@ -49,19 +50,20 @@ Content-Type: application/json
 }
 
 ###
-GET {{url}}/hosts/{{hostId}}
+GET {{url}}/conferences/{{conferenceId}}
 
 ###
-GET {{url}}/hosts
+GET {{url}}/conferences
 
 ###
-PUT {{url}}/hosts/{{hostId}}
+PUT {{url}}/conferences/{{conferenceId}}
 Content-Type: application/json
 
 { 
-    "name" : "Host #2",
-    "description" : "Lorem Ipsum 321"
+    "name" : "Conference #3",
+    "description" : "Lorem Ipsum 321",
+    "location" : "Warsaw"
 }
 
 ###
-DELETE {{url}}/hosts/{{hostId}}
+DELETE {{url}}/conferences/{{conferenceId}}

@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=marcinobi@obi.pl
+      - PGADMIN_DEFAULT_PASSWORD=postgresmaster
+    ports:
+      - '82:80'
+    volumes:
+      - pgadmin:/var/lib/postgresql/data
+
+  confab_postgres:
+    image: postgres:14.1-alpine
+    restart: unless-stopped
+    container_name: confab_app
+    environment:
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres
+      # - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - '5432:5432'
+    volumes: 
+      - confab_postgres:/var/lib/postgresql/data
+      
+volumes:
+  confab_postgres:
+    driver: local
+  pgadmin:
+    driver : local

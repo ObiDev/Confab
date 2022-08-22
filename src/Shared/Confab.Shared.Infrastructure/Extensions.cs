@@ -1,6 +1,7 @@
 ﻿using Confab.Shared.Abtractions;
 using Confab.Shared.Infrastructure.Api;
 using Confab.Shared.Infrastructure.Exceptions;
+using Confab.Shared.Infrastructure.Postgres;
 using Confab.Shared.Infrastructure.Services;
 using Confab.Shared.Infrastructure.Time;
 using Microsoft.AspNetCore.Builder;
@@ -22,6 +23,7 @@ namespace Confab.Shared.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddErrorHandling();
+            services.AddPostgres();
             services.AddSingleton<IClock, UtcClock>();
             services.AddHostedService<AppInitializer>();
 
@@ -43,14 +45,6 @@ namespace Confab.Shared.Infrastructure
         {
             app.UseErrorHandling();
             app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Confab API!");
-                });
-            });
 
             return app;
         }

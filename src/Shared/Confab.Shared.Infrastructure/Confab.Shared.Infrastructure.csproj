@@ -5,14 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Confab.Shared.Abtractions\Confab.Shared.Abtractions.csproj" />
+    <ProjectReference Include="..\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj" />
   </ItemGroup>
 
 
 
 	<ItemGroup>
 	  <PackageReference Include="Humanizer" Version="2.14.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.17" />
 	  <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.2" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.4.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+	  <Folder Include="Auth\" />
 	</ItemGroup>
 
 </Project>

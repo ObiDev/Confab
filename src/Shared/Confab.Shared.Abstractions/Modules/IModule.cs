@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Confab.Shared.Abtractions.Modules
+namespace Confab.Shared.Abstractions.Modules
 {
     public interface IModule
     {
@@ -14,6 +14,6 @@ namespace Confab.Shared.Abtractions.Modules
         string Path { get; }
         void Register(IServiceCollection services);
         void Use(IApplicationBuilder app);
-
+        IEnumerable<string> Policies => null;
     }
 }

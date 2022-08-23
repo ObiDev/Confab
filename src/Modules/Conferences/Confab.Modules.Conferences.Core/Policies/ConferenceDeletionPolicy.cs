@@ -1,5 +1,5 @@
 ﻿using Confab.Modules.Conferences.Core.Entities;
-using Confab.Shared.Abtractions;
+using Confab.Shared.Abstractions.Time;
 using System;
 using System.Collections.Generic;
 using System.Linq;

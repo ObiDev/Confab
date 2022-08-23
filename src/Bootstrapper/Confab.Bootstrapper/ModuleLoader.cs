@@ -1,4 +1,4 @@
-﻿using Confab.Shared.Abtractions.Modules;
+﻿using Confab.Shared.Abstractions.Modules;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;

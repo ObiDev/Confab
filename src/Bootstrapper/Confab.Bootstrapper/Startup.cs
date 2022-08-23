@@ -1,18 +1,15 @@
-using Confab.Modules.Conferences.Api;
-using Confab.Shared.Abtractions.Modules;
+using Confab.Shared.Abstractions.Modules;
 using Confab.Shared.Infrastructure;
+using Confab.Shared.Infrastructure.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Confab.Bootstrapper
 {
@@ -54,6 +51,7 @@ namespace Confab.Bootstrapper
                 {
                     await context.Response.WriteAsync("Confab API!");
                 });
+                endpoints.MapModuleInfo();
             });
 
             _assemblies.Clear();

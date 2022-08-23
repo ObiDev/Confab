@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace Confab.Shared.Abtractions.Exceptions
+namespace Confab.Shared.Abstractions.Exceptions
 {
     public record ExceptionResponse(object Response, HttpStatusCode StatusCode);
 }

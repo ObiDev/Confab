@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5DC1DBD9-AA3B-44E4-B87C-5BB946D91CA6}"
 EndProject
@@ -13,17 +13,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrapper", "Bootstrappe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DB507882-2A0C-4435-BAFC-B44689C520D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Bootstrapper", "src\Bootstrapper\Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{2C59C6C0-7075-4800-A3DC-9A1102E7F02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Bootstrapper", "src\Bootstrapper\Confab.Bootstrapper\Confab.Bootstrapper.csproj", "{2C59C6C0-7075-4800-A3DC-9A1102E7F02E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Abtractions", "src\Shared\Confab.Shared.Abtractions\Confab.Shared.Abtractions.csproj", "{DBD0E65E-177F-4140-AA28-733174E2161E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Abstractions", "src\Shared\Confab.Shared.Abstractions\Confab.Shared.Abstractions.csproj", "{DBD0E65E-177F-4140-AA28-733174E2161E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Shared.Infrastructure", "src\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{9B98E4B6-46D9-4528-865C-AE67A23A0D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Shared.Infrastructure", "src\Shared\Confab.Shared.Infrastructure\Confab.Shared.Infrastructure.csproj", "{9B98E4B6-46D9-4528-865C-AE67A23A0D48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Conferences.Api", "src\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj", "{C0018C50-0F60-4A78-BEB9-084D78B03463}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Api", "src\Modules\Conferences\Confab.Modules.Conferences.Api\Confab.Modules.Conferences.Api.csproj", "{C0018C50-0F60-4A78-BEB9-084D78B03463}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conferences", "Conferences", "{C38E035C-2C95-4E22-8BE1-A002A0737444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confab.Modules.Conferences.Core", "src\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj", "{EF8732E8-367C-4183-A02D-CD41285CBE16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Conferences.Core", "src\Modules\Conferences\Confab.Modules.Conferences.Core\Confab.Modules.Conferences.Core.csproj", "{EF8732E8-367C-4183-A02D-CD41285CBE16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Speakers", "Speakers", "{938488D8-82EE-41FA-A2AD-B9FD5F7652F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Api", "src\Modules\Speakers\Confab.Modules.Speakers.Api\Confab.Modules.Speakers.Api.csproj", "{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Speakers.Core", "src\Modules\Speakers\Confab.Modules.Speakers.Core\Confab.Modules.Speakers.Core.csproj", "{08EF8851-A74E-4857-8094-E64D6206B1B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{EA9EFDC3-CB5A-40A5-8DB6-A3DFD3A72685}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Users.Api", "src\Modules\Users\Confab.Modules.Users.Api\Confab.Modules.Users.Api.csproj", "{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Confab.Modules.Users.Core", "src\Modules\Users\Confab.Modules.Users.Core\Confab.Modules.Users.Core.csproj", "{33294599-60F7-4998-A158-4FE2BF6ECBFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +63,22 @@ Global
 		{EF8732E8-367C-4183-A02D-CD41285CBE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF8732E8-367C-4183-A02D-CD41285CBE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF8732E8-367C-4183-A02D-CD41285CBE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08EF8851-A74E-4857-8094-E64D6206B1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08EF8851-A74E-4857-8094-E64D6206B1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08EF8851-A74E-4857-8094-E64D6206B1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08EF8851-A74E-4857-8094-E64D6206B1B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33294599-60F7-4998-A158-4FE2BF6ECBFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33294599-60F7-4998-A158-4FE2BF6ECBFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33294599-60F7-4998-A158-4FE2BF6ECBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33294599-60F7-4998-A158-4FE2BF6ECBFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +93,12 @@ Global
 		{C0018C50-0F60-4A78-BEB9-084D78B03463} = {C38E035C-2C95-4E22-8BE1-A002A0737444}
 		{C38E035C-2C95-4E22-8BE1-A002A0737444} = {7D31FC60-864F-4F97-A88E-12F441649129}
 		{EF8732E8-367C-4183-A02D-CD41285CBE16} = {C38E035C-2C95-4E22-8BE1-A002A0737444}
+		{938488D8-82EE-41FA-A2AD-B9FD5F7652F6} = {7D31FC60-864F-4F97-A88E-12F441649129}
+		{7DCE415B-93BD-4C22-8690-D5FF7FBCDEA5} = {938488D8-82EE-41FA-A2AD-B9FD5F7652F6}
+		{08EF8851-A74E-4857-8094-E64D6206B1B4} = {938488D8-82EE-41FA-A2AD-B9FD5F7652F6}
+		{EA9EFDC3-CB5A-40A5-8DB6-A3DFD3A72685} = {7D31FC60-864F-4F97-A88E-12F441649129}
+		{5283FD9B-FF03-4E14-B2F3-04D4709CDDF4} = {EA9EFDC3-CB5A-40A5-8DB6-A3DFD3A72685}
+		{33294599-60F7-4998-A158-4FE2BF6ECBFC} = {EA9EFDC3-CB5A-40A5-8DB6-A3DFD3A72685}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46B9C6E2-C94B-428F-A775-04E2380C8F46}

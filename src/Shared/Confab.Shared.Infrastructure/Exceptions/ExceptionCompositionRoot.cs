@@ -1,10 +1,7 @@
-﻿using Confab.Shared.Abtractions.Exceptions;
+﻿using Confab.Shared.Abstractions.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Confab.Shared.Infrastructure.Exceptions
 {

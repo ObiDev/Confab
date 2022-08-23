@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Confab.Shared.Abtractions.Exceptions
+namespace Confab.Shared.Abstractions.Exceptions
 {
     public interface IExceptionToResponseMapper
     {

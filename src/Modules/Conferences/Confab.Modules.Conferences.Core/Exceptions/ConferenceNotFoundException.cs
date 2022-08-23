@@ -1,4 +1,4 @@
-﻿using Confab.Shared.Abtractions.Exceptions;
+﻿using Confab.Shared.Abstractions.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

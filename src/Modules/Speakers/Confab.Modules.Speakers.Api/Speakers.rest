@@ -1,0 +1,36 @@
+@url = http://localhost:5000/speakers-module
+@speakerId = b4ba141f-cc08-46db-8dc8-918d91f40ec3
+
+
+###
+GET {{url}}
+
+###
+POST {{url}}/speakers
+Content-Type: application/json
+
+{ 
+    "email" : "test@test.pl",
+    "fullName" : "Mieczysw Kopytko kolanko",
+    "bio" : "Ho ho ho",
+    "avatarUrl" : null
+}
+
+###
+GET {{url}}/speakers/{{speakerId}}
+
+###
+GET {{url}}/speakers
+
+###
+PUT {{url}}/speakers/{{speakerId}}
+Content-Type: application/json
+
+{ 
+    "fullName" : "Marek Citko",
+    "bio" : "Hi hi hi",
+    "email" : "testowo@testowo.pl"
+}
+
+###
+DELETE {{url}}/speakers/{{speakerId}}

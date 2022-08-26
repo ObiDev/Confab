@@ -1,7 +1,7 @@
 @url = http://localhost:5000/conferences-module
 @hostId = c055488e-3ae9-4925-81ad-d1e9e29e667b
 @conferenceId = 85381adb-0528-4cff-b939-e4cf3ca954b1
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZjM1NjczNC0wOGMxLTQ0YTAtYmFkNi03MWI1N2I3MjFhMGMiLCJ1bmlxdWVfbmFtZSI6IjZmMzU2NzM0LTA4YzEtNDRhMC1iYWQ2LTcxYjU3YjcyMWEwYyIsImp0aSI6IjYyZjdjMzMyLTU2YjUtNDliNS04MmUyLTkxYjI4YzJiYTc5MSIsImlhdCI6IjE2NjEyNTE5NTU0NTIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJob3N0cyIsInNwZWFrZXJzIiwidGlja2V0cyIsInVzZXJzIl0sIm5iZiI6MTY2MTI1MTk1NSwiZXhwIjoxNjYxMjg3OTU1LCJpc3MiOiJjb25mYWIifQ.l428P4XgGA9wKVtAKjX2mqrXhNyOnjYVNVyuwlQEhkg
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3OTEzNmNiOS1kODFkLTRjNGMtOTM1Yy1jYmU1NmY3NmVkOWEiLCJ1bmlxdWVfbmFtZSI6Ijc5MTM2Y2I5LWQ4MWQtNGM0Yy05MzVjLWNiZTU2Zjc2ZWQ5YSIsImp0aSI6ImM5MjM2NDk3LWVjMDktNGZhYi1iMTJkLWRiNjVmYTMwODdlOSIsImlhdCI6IjE2NjEyNTI4NTI3NzEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJzcGVha2VycyIsInRpY2tldHMiLCJ1c2VycyJdLCJuYmYiOjE2NjEyNTI4NTIsImV4cCI6MTY2MTI4ODg1MiwiaXNzIjoiY29uZmFiIn0._gmiGDI4MliV6b1ClpPkrpcmstbMeqqgkcPGwDxOt1E
 
 
 ###
@@ -9,10 +9,11 @@ GET {{url}}
 
 ###
 POST {{url}}/hosts
+Authorization: Bearer {{accessToken}}
 Content-Type: application/json
 
 { 
-    "name" : "Host #11",
+    "name" : "Host #111",
     "description" : "Lorem Ipsum"
 }
 

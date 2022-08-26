@@ -68,6 +68,7 @@ namespace Confab.Shared.Infrastructure
             services.AddSingleton<IContextFactory, ContextFactory>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient(sp => sp.GetRequiredService<IContextFactory>().Create());
+
             services.AddModuleInfo(modules);
             services.AddAuth(modules);
             services.AddErrorHandling();
@@ -104,6 +105,7 @@ namespace Confab.Shared.Infrastructure
 
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
         {
+            //TODO: Check the order
             app.UseCors(CorsPolisy);
             app.UseErrorHandling();
             app.UseSwagger();

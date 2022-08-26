@@ -10,7 +10,7 @@ namespace Confab.Shared.Infrastructure.Exceptions
         {
             services.AddScoped<ErrorHandlerMiddleware>();
             services.AddSingleton<IExceptionToResponseMapper, ExceptionToResponseMapper>();
-            services.AddSingleton<IExcepionCompositionRoot, ExceptionCompositionRoot>();
+            services.AddSingleton<IExceptionCompositionRoot, ExceptionCompositionRoot>();
 
             return services;
         }

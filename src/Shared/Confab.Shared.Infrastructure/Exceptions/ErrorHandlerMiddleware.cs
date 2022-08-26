@@ -8,10 +8,10 @@ namespace Confab.Shared.Infrastructure.Exceptions
 {
     internal class ErrorHandlerMiddleware : IMiddleware
     {
-        private readonly IExcepionCompositionRoot _excepionCompositionRoot;
+        private readonly IExceptionCompositionRoot _excepionCompositionRoot;
         private readonly ILogger<ErrorHandlerMiddleware> _logger;
 
-        public ErrorHandlerMiddleware(IExcepionCompositionRoot excepionCompositionRoot, ILogger<ErrorHandlerMiddleware> logger)
+        public ErrorHandlerMiddleware(IExceptionCompositionRoot excepionCompositionRoot, ILogger<ErrorHandlerMiddleware> logger)
         {
             _excepionCompositionRoot = excepionCompositionRoot;
             _logger = logger;

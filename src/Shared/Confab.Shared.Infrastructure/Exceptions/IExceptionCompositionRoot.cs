@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Confab.Shared.Infrastructure.Exceptions
 {
-    internal interface IExcepionCompositionRoot
+    internal interface IExceptionCompositionRoot
     {
         ExceptionResponse Map(Exception exception);
     }

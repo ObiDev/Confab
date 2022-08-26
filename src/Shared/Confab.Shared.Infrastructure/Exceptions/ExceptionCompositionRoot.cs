@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Confab.Shared.Infrastructure.Exceptions
 {
-    internal class ExceptionCompositionRoot : IExcepionCompositionRoot
+    internal class ExceptionCompositionRoot : IExceptionCompositionRoot
     {
         private readonly IServiceProvider _serviceProvider;
 

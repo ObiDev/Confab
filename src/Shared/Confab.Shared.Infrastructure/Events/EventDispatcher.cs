@@ -1,0 +1,29 @@
+﻿using Confab.Shared.Abstractions.Events;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Confab.Shared.Infrastructure.Events
+{
+    internal sealed class EventDispatcher : IEventDispatcher
+    {
+        private readonly IServiceProvider _serviceProvider;
+
+        public EventDispatcher(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
+        async Task IEventDispatcher.PublishAsync<TEvent>(TEvent @event)
+        {
+            using var scope = _serviceProvider.CreateScope();
+            var handlers = scope.ServiceProvider.GetServices<IEventHandler<TEvent>>();
+
+            var tasks = handlers.Select(x => x.HandleAsync(@event));
+            await Task.WhenAll(tasks);
+        }
+    }
+}

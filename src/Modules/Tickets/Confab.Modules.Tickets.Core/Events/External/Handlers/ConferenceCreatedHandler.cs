@@ -2,6 +2,7 @@
 using Confab.Modules.Tickets.Core.Repositories;
 using Confab.Shared.Abstractions.Events;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Threading.Tasks;
 
 namespace Confab.Modules.Tickets.Core.Events.External.Handlers
@@ -20,6 +21,7 @@ namespace Confab.Modules.Tickets.Core.Events.External.Handlers
 
         public async Task HandleAsync(ConferenceCreated @event)
         {
+            throw new Exception("Errorek");
             var conference = new Conference
             {
                 Id = @event.Id,

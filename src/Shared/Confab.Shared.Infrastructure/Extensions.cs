@@ -5,6 +5,7 @@ using Confab.Shared.Infrastructure.Auth;
 using Confab.Shared.Infrastructure.Contexts;
 using Confab.Shared.Infrastructure.Events;
 using Confab.Shared.Infrastructure.Exceptions;
+using Confab.Shared.Infrastructure.Messaging;
 using Confab.Shared.Infrastructure.Modules;
 using Confab.Shared.Infrastructure.Postgres;
 using Confab.Shared.Infrastructure.Services;
@@ -71,6 +72,7 @@ namespace Confab.Shared.Infrastructure
             services.AddTransient(sp => sp.GetRequiredService<IContextFactory>().Create());
             services.AddModuleRequests(assemblies);
             services.AddModuleInfo(modules);
+            services.AddMessaging();
             services.AddAuth(modules);
             services.AddErrorHandling();
             services.AddEvents(assemblies);

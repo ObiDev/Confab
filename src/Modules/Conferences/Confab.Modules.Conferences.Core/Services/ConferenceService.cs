@@ -1,14 +1,13 @@
 ﻿using Confab.Modules.Conferences.Core.DTO;
 using Confab.Modules.Conferences.Core.Entities;
+using Confab.Modules.Conferences.Core.Events;
 using Confab.Modules.Conferences.Core.Exceptions;
 using Confab.Modules.Conferences.Core.Policies;
 using Confab.Modules.Conferences.Core.Repositories;
-using Confab.Modules.Conferences.Messages.Events;
-using Confab.Shared.Abstractions.Events;
+using Confab.Shared.Abstractions.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Confab.Modules.Conferences.Core.Services
@@ -18,15 +17,15 @@ namespace Confab.Modules.Conferences.Core.Services
         private readonly IConferenceRepository _conferenceRepository;
         private readonly IHostRepository _hostRepository;
         private readonly IConferenceDeletionPolicy _conferenceDeletionPolicy;
-        private readonly IEventDispatcher _eventDispatcher;
+        private readonly IModuleClient _moduleClient;
 
         public ConferenceService(IConferenceRepository conferenceRepository, IHostRepository hostRepository,
-            IConferenceDeletionPolicy conferenceDeletionPolicy, IEventDispatcher eventDispatcher)
+            IConferenceDeletionPolicy conferenceDeletionPolicy, IModuleClient moduleClient)
         {
             _conferenceRepository = conferenceRepository;
             _hostRepository = hostRepository;
             _conferenceDeletionPolicy = conferenceDeletionPolicy;
-            _eventDispatcher = eventDispatcher;
+            _moduleClient = moduleClient;
         }
 
 
@@ -52,7 +51,7 @@ namespace Confab.Modules.Conferences.Core.Services
 
             await _conferenceRepository.AddAsync(conference);
 
-            await _eventDispatcher.PublishAsync(new ConferenceCreated(conference.Id, conference.Name, conference.ParticipantsLimit,
+            await _moduleClient.PublishAsync(new ConferenceCreated(conference.Id, conference.Name, conference.ParticipantsLimit,
                 conference.From, conference.To));
         }
 

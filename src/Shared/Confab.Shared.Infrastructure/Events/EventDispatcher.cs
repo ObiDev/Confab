@@ -17,7 +17,7 @@ namespace Confab.Shared.Infrastructure.Events
             _serviceProvider = serviceProvider;
         }
 
-        async Task IEventDispatcher.PublishAsync<TEvent>(TEvent @event)
+        public async Task PublishAsync<TEvent>(TEvent @event) where TEvent : class, IEvent
         {
             using var scope = _serviceProvider.CreateScope();
             var handlers = scope.ServiceProvider.GetServices<IEventHandler<TEvent>>();

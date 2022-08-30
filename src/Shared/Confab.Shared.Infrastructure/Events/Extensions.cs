@@ -21,7 +21,6 @@ namespace Confab.Shared.Infrastructure.Events
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
 
-
             return services;
         }
     }

@@ -1,7 +1,7 @@
 @url = http://localhost:5000/conferences-module
 @hostId = c055488e-3ae9-4925-81ad-d1e9e29e667b
 @conferenceId = 85381adb-0528-4cff-b939-e4cf3ca954b1
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NDlhMWZlOS1lODJkLTQ4MDItOGRiNS1iNTU1YWQ4NWY5OTMiLCJ1bmlxdWVfbmFtZSI6IjQ0OWExZmU5LWU4MmQtNDgwMi04ZGI1LWI1NTVhZDg1Zjk5MyIsImp0aSI6IjFkYTg3MWZmLTA5YTYtNDczZC1hZDU2LWE0OTJkODdlMzlmMSIsImlhdCI6IjE2NjE3Njc0NDAyOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJzcGVha2VycyIsInRpY2tldHMiLCJ1c2VycyJdLCJuYmYiOjE2NjE3Njc0NDAsImV4cCI6MTY2MTgwMzQ0MCwiaXNzIjoiY29uZmFiIn0.a_5Z_cazeDXDKDAzItIDaaP6OUXNYZTnaptZnlrokxE
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNzNjYmM4Ny01Y2ExLTQ1ZDctYTQ5Yi1mNzQyNDNiM2Y4MDkiLCJ1bmlxdWVfbmFtZSI6ImQ3M2NiYzg3LTVjYTEtNDVkNy1hNDliLWY3NDI0M2IzZjgwOSIsImp0aSI6ImQxYjlhMGZhLTZmZjgtNGM1Yy1iMzJkLWU5YzdiYTYyOTI0ZSIsImlhdCI6IjE2NjE3OTI5MjczNTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwicGVybWlzc2lvbnMiOlsiY29uZmVyZW5jZXMiLCJzcGVha2VycyIsInRpY2tldHMiLCJ1c2VycyJdLCJuYmYiOjE2NjE3OTI5MjcsImV4cCI6MTY2MTgyODkyNywiaXNzIjoiY29uZmFiIn0.kF5M4PPqLg4p7-2RX6YQ4bierui1BTaNPrk9wdNU7tg
 
 ###
 GET {{url}}
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 { 
     "hostId" : "{{hostId}}",
-    "name" : "Conference #6",
+    "name" : "Conference #8",
     "description" : "Lorem Ipsum",
     "location" : "Test 123",
     "from" : "2022-12-01",

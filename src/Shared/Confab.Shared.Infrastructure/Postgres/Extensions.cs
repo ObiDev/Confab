@@ -27,6 +27,4 @@ namespace Confab.Shared.Infrastructure.Postgres
             return services;
         }
     }
-
-   
 }

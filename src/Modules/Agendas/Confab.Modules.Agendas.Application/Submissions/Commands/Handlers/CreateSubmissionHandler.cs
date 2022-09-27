@@ -2,6 +2,7 @@
 using Confab.Modules.Agendas.Domain.Submissions.Entities;
 using Confab.Modules.Agendas.Domain.Submissions.Repositories;
 using Confab.Shared.Abstractions.Commands;
+using Confab.Shared.Abstractions.Kernel;
 using Confab.Shared.Abstractions.Kernel.Types;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,11 +13,13 @@ namespace Confab.Modules.Agendas.Application.Submissions.Commands.Handlers
     {
         private readonly ISubmissionRepository _submissionRepository;
         private readonly ISpeakerRepository _speakerRepository;
+        private readonly IDomaintEventDispatcher _domaintEventDispatcher;
 
-        public CreateSubmissionHandler(ISubmissionRepository submissionRepository, ISpeakerRepository speakerRepository)
+        public CreateSubmissionHandler(ISubmissionRepository submissionRepository, ISpeakerRepository speakerRepository, IDomaintEventDispatcher domaintEventDispatcher)
         {
             _submissionRepository = submissionRepository;
             _speakerRepository = speakerRepository;
+            _domaintEventDispatcher = domaintEventDispatcher;
         }
 
         public async Task HandleAsync(CreateSubmission command)
@@ -31,6 +34,8 @@ namespace Confab.Modules.Agendas.Application.Submissions.Commands.Handlers
                 command.Level, command.Tags, speakers.ToList());
 
             await _submissionRepository.AddAsync(submission);
+            await _domaintEventDispatcher.DispatchAsync(submission.Events.ToArray());
+
         }
     }
 }

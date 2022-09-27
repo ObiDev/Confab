@@ -21,6 +21,11 @@ namespace Confab.Modules.Agendas.Domain.Submissions.Entities
 
         private ICollection<Speaker> _speakers;
 
+        public Submission()
+        {
+
+        }
+
         public Submission(AggregateId aggregateId, ConferenceId conferenceId, string title, string description, int level, string status, 
             IEnumerable<string> tags, ICollection<Speaker> speakers, int version = 0) : this(aggregateId, conferenceId)
         {
@@ -41,7 +46,7 @@ namespace Confab.Modules.Agendas.Domain.Submissions.Entities
         }
 
         public static Submission Create(AggregateId aggregateId, ConferenceId conferenceId, string title, string description, int level,
-            IEnumerable<string> tags, ICollection<Speaker> speakers)
+            IEnumerable<string> tags, IEnumerable<Speaker> speakers)
         {
             var submission = new Submission(aggregateId, conferenceId);
             submission.ChangeTitle(title);

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Confab.Modules.Agendas.Domain.Submissions.Entities
 {
-    public sealed class Submission : AggregateRoot
+    public class Submission : AggregateRoot
     {
         public ConferenceId ConferenceId { get; private set; }
         public string Title { get; private set; }

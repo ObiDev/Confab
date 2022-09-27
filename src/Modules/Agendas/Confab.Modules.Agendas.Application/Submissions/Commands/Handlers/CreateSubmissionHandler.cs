@@ -1,9 +1,11 @@
-﻿using Confab.Modules.Agendas.Application.Submissions.Exceptions;
+﻿using Confab.Modules.Agendas.Application.Services;
+using Confab.Modules.Agendas.Application.Submissions.Exceptions;
 using Confab.Modules.Agendas.Domain.Submissions.Entities;
 using Confab.Modules.Agendas.Domain.Submissions.Repositories;
 using Confab.Shared.Abstractions.Commands;
 using Confab.Shared.Abstractions.Kernel;
 using Confab.Shared.Abstractions.Kernel.Types;
+using Confab.Shared.Abstractions.Messaging;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,12 +16,17 @@ namespace Confab.Modules.Agendas.Application.Submissions.Commands.Handlers
         private readonly ISubmissionRepository _submissionRepository;
         private readonly ISpeakerRepository _speakerRepository;
         private readonly IDomaintEventDispatcher _domaintEventDispatcher;
+        private readonly IEventMapper _eventMapper;
+        private readonly IMessageBroker _messageBroker;
 
-        public CreateSubmissionHandler(ISubmissionRepository submissionRepository, ISpeakerRepository speakerRepository, IDomaintEventDispatcher domaintEventDispatcher)
+        public CreateSubmissionHandler(ISubmissionRepository submissionRepository, ISpeakerRepository speakerRepository, 
+            IDomaintEventDispatcher domaintEventDispatcher, IEventMapper eventMapper, IMessageBroker messageBroker)
         {
             _submissionRepository = submissionRepository;
             _speakerRepository = speakerRepository;
             _domaintEventDispatcher = domaintEventDispatcher;
+            _eventMapper = eventMapper;
+            _messageBroker = messageBroker;
         }
 
         public async Task HandleAsync(CreateSubmission command)
@@ -33,8 +40,12 @@ namespace Confab.Modules.Agendas.Application.Submissions.Commands.Handlers
             var submission = Submission.Create(command.Id, command.ConferenceId, command.Title, command.Description,
                 command.Level, command.Tags, speakers.ToList());
 
-            await _submissionRepository.AddAsync(submission);
             await _domaintEventDispatcher.DispatchAsync(submission.Events.ToArray());
+            
+            var events = _eventMapper.MapAll(submission.Events);
+
+            await _submissionRepository.AddAsync(submission);
+            await _messageBroker.PublishAsync(events.ToArray());
 
         }
     }
